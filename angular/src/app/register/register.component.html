@@ -1,0 +1,141 @@
+<div class="body">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg p-5 mt-5 mb-5 ">
+
+                    <div class="rs">
+                        <h1>Register Here!</h1>
+                        
+                    </div>     
+                    <div [ngClass]="className" role="alert">
+                        {{message}}
+                        <a routerLink="/login" class="text-primary" style="cursor: pointer;">Login Here</a>
+                    </div>
+                    <hr>
+                    <form [formGroup]="signupoForm" class="text-left">
+
+
+
+
+                        <div class="form-group">
+                            <label for="displayName" class="form-label">displayName</label>
+                            <input typr="text" class="form-control" id="displayName" formControlName="displayName"
+                               placeholder="Enter UserName" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+                            <div class="form-text text-danger" *ngIf="displayName.errors?.['required'] && (displayName.touched || displayName.dirty)">
+                                Required*
+                            </div>
+                            <div class="form-text text-danger" *ngIf="displayName.errors?.['minlength'] && (displayName.touched || displayName.dirty)">
+                                Name is too Short
+                            </div>
+                            <div class="form-text text-danger" *ngIf="displayName.errors?.['pattern'] && (displayName.touched || displayName.dirty)">
+                                Name should start with alphabet
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input typr="text" class="form-control" id="name" formControlName="name"
+                              placeholder="Enter Name"  [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+                            <div class="form-text text-danger" *ngIf="name.errors?.['required'] && (name.touched || name.dirty)">
+                                Required*
+                            </div>
+                            <div class="form-text text-danger" *ngIf="name.errors?.['minlength'] && (name.touched || name.dirty)">
+                                Name is too Short
+                            </div>
+                            <div class="form-text text-danger" *ngIf="name.errors?.['pattern'] && (name.touched || name.dirty)">
+                                Name should start with alphabet
+                            </div>
+                     
+                        </div>
+                        
+
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Adress</label>
+                            <input typr="email" class="form-control" id="email" formControlName="email"
+                               placeholder="Enter Email Id" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                            <div class="form-text text-danger" *ngIf="email.errors?.['required'] && (email.touched || email.dirty)">
+                                Required*
+                            </div>
+                            <div class="form-text text-danger" *ngIf="email.errors?.['pattern'] && (email.touched || email.dirty)">
+                                Email is invalid*
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="form-group">
+                            <label for="mobile" class="form-label">Mobile Number</label>
+                            <input type="text" (keypress)="OnlyNumbersAllowed($event)" class="form-control" id="mobile"
+                               placeholder="Enter Number" formControlName="mobile" [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }">
+                          
+                            <div class="form-text text-danger" *ngIf="mobile.errors?.['required'] && (mobile.touched || mobile.dirty)">
+                                Required*
+                            </div>
+                            <div class="form-text text-danger" *ngIf="mobile.errors?.['pattern'] && (mobile.touched || mobile.dirty)">
+                                Number is Invalid*
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+
+                            <input matInput [type]="showPassword ? 'text' : 'password'" class="form-control" id="password" formControlName="password"
+                            placeholder="Enter password"  [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+                                <mat-icon matSuffix (click)="togglePasswordVisibility()">    {{showPassword?'visibility_off':'visibility'}}
+                                </mat-icon>
+                         
+                            <div class="form-text text-danger" *ngIf="password.errors?.['required'] && (password.touched || password.dirty)">
+                                Required*
+                            </div>
+                    
+                            <div class="form-text text-danger" *ngIf="password.errors?.['pattern'] && (password.touched || password.dirty)">
+                                Incorrect form please add at least one uppercase,
+                                onelowercase,
+                                one special char and
+                                one number and
+                                pass must be between 6 to 15 char*
+                            </div>
+                        </div><br>
+
+
+
+
+
+
+
+                        <div class="rb">
+                            <button type="submit" class="btn btn-outline-success btn-block" (click)="signup()">Create Account
+                            </button>&nbsp;
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

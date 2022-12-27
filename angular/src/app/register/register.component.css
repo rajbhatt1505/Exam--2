@@ -1,0 +1,23 @@
+.raj{
+    color: red;
+}
+.body{
+    background-color: rgb(11, 43, 2);
+    /* background-image: url('https://cdn.pixabay.com/photo/2016/11/02/22/53/background-1792968_960_720.jpg'); */
+}
+    /* height: 575px;
+} */
+/* .col-md-6{
+    /* margin-bottom: 200px; */
+    .card{
+background-color: rgb(245, 245, 245); 
+    color: rgb(12, 1, 1);
+    font-style:bold;
+    font-weight:600;    }
+    .rs{
+        padding-left: 129px;
+    }
+    .card{
+        color: black;
+        font-weight: 600;
+    }

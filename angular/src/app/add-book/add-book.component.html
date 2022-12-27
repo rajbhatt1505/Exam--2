@@ -1,0 +1,78 @@
+<div class="body">
+<!-- <div class="row justify-content-center mt-5"> -->
+    <!-- <div class="card shadow-lg p-5 mt-5 mb-5"> -->
+
+    <div class="col-md-6">
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+
+        
+
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+            <input typr="text" class="form-control" id="name" formControlName="name"
+               placeholder="Book Name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+            <div class="form-text text-danger" *ngIf="name?.errors?.['required'] && (price.touched || price.dirty)">
+                Required*
+            </div>
+            <div class="form-text text-danger" *ngIf="name?.errors?.['minlength'] && (price.touched || price.dirty)">
+                Name should start with alphabet
+            </div>
+            <div class="form-text text-danger" *ngIf="name?.errors?.['pattern'] && (price.touched || price.dirty)">
+                Name should start with alphabet
+            </div>
+            </div>&nbsp;
+
+
+
+            <div class="form-group">
+                <label for="mobile" class="form-label">Book price</label>
+                <input type="text" (keypress)="OnlyNumbersAllowed($event)" class="form-control" id="price"
+                   placeholder="Book Price" formControlName="price" [ngClass]="{ 'is-invalid': submitted && f['price'].errors }">
+              
+                <div class="form-text text-danger" *ngIf="price.errors?.['required'] && (price.touched || price.dirty)">
+                    Required*
+                </div>
+              
+            </div>
+            
+
+
+
+
+            <div class="form-group">
+                <label for="quantity" class="form-label">Book Quantity</label>
+                <input type="text" (keypress)="OnlyNumbersAllowed($event)" class="form-control" id="price"
+                   placeholder="Book Quntity" formControlName="quantity" [ngClass]="{ 'is-invalid': submitted && f['quantity'].errors }">
+              
+                <div class="form-text text-danger" *ngIf="quantity.errors?.['required'] && (quantity.touched || price.dirty)">
+                    Required*
+                </div>
+                
+            </div>&nbsp;
+
+
+            <div class="form-group">
+                <label for="description" class="form-label">Description</label>
+
+                <input typr="text" class="form-control" id="name" formControlName="description"
+               placeholder="Book Description" [ngClass]="{ 'is-invalid': submitted && f['description'].errors }">
+            <div class="form-text text-danger" *ngIf="description?.errors?.['required'] && (price.touched || price.dirty)">
+                Required*
+            </div>
+            </div>&nbsp;
+
+            <div class="form-group-1">
+                <label id="l1" for="profile"></label>
+                <input class="raj" formControlName="image_file" id="profile" (change)="fileChangeEvent($event)"
+                    type="File" accept="image/*" >
+            </div>
+        <br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"type="submit">Add Book</button>
+            </div>
+
+        
+        </form>
+    </div>
+<!-- </div> -->
+</div>

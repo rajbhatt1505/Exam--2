@@ -1,0 +1,32 @@
+<div class="grid">
+  <div class="col-12">
+      <div class="card">
+        <!-- <button mat-button routerLink="/profile"  style="width: 150px;" color="primary">Add new profile</button>  -->
+        <mat-divider></mat-divider><br>
+        <table  class="table" >
+          <thead>
+          <tr>
+            <th >Sno.</th>
+            <th   scope="col"  >name</th>
+            <th   scope="col"  >Username</th>
+            <th   scope="col" >Email</th>
+            <th   scope="col" >Phone</th>
+            <th   scope="col" >Edit</th>
+            <th   scope="col" >Delete</th>
+          </tr>
+        </thead>
+        <ng-container *ngFor="let data of data;let i=index">
+        <tbody>
+          <tr>
+            <th   scope="col">{{(i+1)}}</th>
+            <th  scope="col">{{data.name}}</th>
+            <th  scope="col">{{data.displayName}}</th>
+            <th   scope="col">{{data.email}}</th>
+            <th  scope="col">{{data.mobile}}</th>
+            <td><button mat-button mat-icon-button color="edit" routerLink="/profile" > <mat-icon>edit</mat-icon></button></td>         
+            <td><button mat-button mat-icon-button color="warn" (click)="del(data._id)"  > <mat-icon>delete</mat-icon></button></td>  
+          </tr>       
+        </tbody>
+      </ng-container>
+        </table>
+        <br>

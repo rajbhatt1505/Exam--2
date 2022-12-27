@@ -1,0 +1,12 @@
+.body{
+    background-color:  rgb(11, 43, 2);
+    height: 575px;
+    color: aliceblue;
+    font-weight: 600;
+    /* margin-left: 50px; */
+    padding-left: 450px;
+    padding-top: 100px;
+}
+.raj{
+    padding-left: 130px;
+}
